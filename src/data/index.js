@@ -9,52 +9,13 @@ import verbs from './verbs';
 
 // https://niemiecki.ang.pl/gramatyka/czesci-mowy
 
-export default [{
-  header: {
-    polish: 'Rzeczownik(i)',
-    german: 'Substantiv(e)'
-  },
-  items: nouns
-}, {
-  header: {
-    polish: 'Czasownik(i)',
-    german: 'Verb(en)'
-  },
-  items: verbs
-}, {
-  header: {
-    polish: 'Przymiotnik(i)',
-    german: 'Adjektiv(e)'
-  },
-  items: adjectives
-}, {
-  header: {
-    polish: 'Liczebniki(i)',
-    german: 'Ziffer/Zahlen'
-  },
-  items: numerals
-}, {
-  header: {
-    polish: 'Partykuł(y)',
-    german: 'Partikel'
-  },
-  items: particles
-}, {
-  header: {
-    polish: 'Przyim(ek/ki)',
-    german: 'Präposition(en)'
-  },
-  items: prepositions
-}, {
-  header: {
-    polish: 'Przysłów(ek/ki)',
-    german: 'Adverb(ien)'
-  },
-  items: adverbs
-}, {
-  header: {
-    polish: 'Zaim(ek/ki)',
-    german: 'Pronomen'
-  },
-  items: pronouns
-}];
+export default {
+  nouns,
+  verbs,
+  adjectives,
+  numerals,
+  particles,
+  prepositions,
+  adverbs,
+  pronouns
+};

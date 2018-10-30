@@ -1,23 +1,26 @@
 import './styles.scss';
 import tag from 'lean-tag';
 import data from './data';
+import renderSection from './render/section';
 
-const FROM = 'polish';
-const TO = 'german';
+// import { omit } from 'lodash';
 
-function renderTable(items) {
-  const rows = items.map((def) => tag('tr', tag('td', def[FROM]), tag('td', def[TO])));
+const sections = Object.keys(data).reduce((obj, key) => Object.assign(obj, {
+  [key]: renderSection(data[key])
+}), {});
 
-  return tag('table', rows);
-}
-
-function renderSection(section) {
-  const table = renderTable(section.items);
-
-  return tag('.section', tag('h3.section-header', tag('', section.header[FROM]), tag('', section.header[TO])), table);
-}
-
-const sections = data.map((section) => renderSection(section));
-const paper = tag('.paper', sections);
+const paper = tag('.paper', [
+  tag('.col', sections.nouns),
+  tag('.col',
+      sections.verbs,
+      tag('.row',
+          tag('.col', sections.pronouns),
+          tag('.col', sections.prepositions)
+      ),
+      sections.adjectives
+  ),
+  tag('.col', sections.numerals),
+  tag('.col', sections.particles, sections.adverbs)
+]);
 
 document.body.appendChild(paper);

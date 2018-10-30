@@ -14,13 +14,21 @@ $a4__width: 29.7cm;
 $a4__height: 21cm;
 $padding: .5cm;
 
-.section {
+.col {
   flex: 1 1 auto;
 
-  + .section {
+  + .col {
     border-left: solid 1px #bbb;
     margin-left: 1em;
     padding-left: 1em;
+  }
+}
+
+.section {
+  flex: 1 1 auto;
+
+  &:not(:first-child) {
+    margin-top: 1em;
   }
 }
 
@@ -71,4 +79,13 @@ td {
 
 tr:nth-child(2n + 1) {
   background-color: #f0f0f0;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
 }

@@ -7,14 +7,21 @@ body {
   padding: 0;
   border: 0; }
 
+.col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; }
+  .col + .col {
+    border-left: solid 1px #bbb;
+    margin-left: 1em;
+    padding-left: 1em; }
+
 .section {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto; }
-  .section + .section {
-    border-left: solid 1px #bbb;
-    margin-left: 1em;
-    padding-left: 1em; }
+  .section:not(:first-child) {
+    margin-top: 1em; }
 
 .section-header {
   text-align: center;
@@ -59,4 +66,12 @@ td {
 
 tr:nth-child(2n + 1) {
   background-color: #f0f0f0; }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .row:not(:first-child) {
+    margin-top: 1em; }
 
